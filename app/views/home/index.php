@@ -1,12 +1,8 @@
 <?php
 include __DIR__ . '/../header.php';
-
 ?>
 
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-    <script src="https://kit.fontawesome.com/8a30a83fae.js" crossorigin="anonymous"></script>
-</head>
+
 <div class="row">
     <div class="col-md-12">
         <h1>HelpMijnWasIsNat.nl</h1>

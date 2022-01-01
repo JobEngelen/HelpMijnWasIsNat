@@ -1,11 +1,11 @@
 <?php
-class Article {
+class Product {
 
-    private int $id;
+    public int $id;
     public string $title;
     public string $content;
-    public string $author;
-    public string $posted_at;
+    public float $rating;
+    public float $price;
 
     public function setId(int $id) {
         $this->id = $id;
