@@ -77,4 +77,4 @@
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container w-100 pull-center">

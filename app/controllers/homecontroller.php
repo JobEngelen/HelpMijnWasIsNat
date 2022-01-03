@@ -1,8 +1,7 @@
 <?php
+require __DIR__ . '/controller.php';
 
-class HomeController
-{
-
+class HomeController extends Controller {
     public function index()
     {
         require __DIR__ . '/../views/home/index.php';
@@ -13,3 +12,4 @@ class HomeController
         require __DIR__ . '/../views/home/about.php';
     }
 }
+    

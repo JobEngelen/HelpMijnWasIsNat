@@ -52,7 +52,7 @@ foreach ($model as $product) {
             </div>
             <div class="row">
                 <div class="col-md-6 w-50 px-2">
-                    <button type="button" class="btn btn-warning w-100">
+                    <button type="button" class="btn btn-primary w-100">
                         <i class="fas fa-redo"></i> Revert changes
                     </button>
                 </div>

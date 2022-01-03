@@ -1,5 +1,5 @@
 <?php
-class Product {
+class Product implements \JsonSerializable {
 
     public int $id;
     public string $title;
@@ -13,6 +13,12 @@ class Product {
 
     public function getId() {
         return $this->id;
+    }
+
+    public function jsonSerialize(): mixed
+    {
+        $vars = get_object_vars($this);
+        return $vars;
     }
 }
 ?>
