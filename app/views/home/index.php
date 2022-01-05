@@ -12,9 +12,8 @@ include __DIR__ . '/../header.php';
     </div>
     <div class="col-md-8">
         <div id="productListing" class="50"></div>
-
         <script>
-            fetch('http://localhost/api/product')
+            fetch('/api/product')
                 .then(function(response) {
                     return response.json();
                 })
