@@ -20,10 +20,10 @@ foreach ($model as $product) {
         ?>
         <div class="col-md-<?php echo $bootstrapColWidth; ?> border pt-3 pb-3">
             <div class="thumbnail">
-                <img src='<?php echo $product->image ?>' class="w-100 h-100">
-                <button type="button" class="btn btn-danger">
+                <button type="button" class="btn btn-danger pull-right">
                     <i class="fas fa-times"></i>
                 </button>
+                <img src='<?php echo $product->image ?>' class="w-100 h-100">
             </div>
             <input type="text" value="<?php echo $product->title ?>" id="addProductForm" class="form-control" maxlength="255" name="title" required />
             <textarea id="addProductForm" class="form-control" rows="5" maxlength="2048" name="description" required><?php echo $product->content ?></textarea>

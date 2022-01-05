@@ -2,7 +2,7 @@
 include __DIR__ . '/../header.php';
 
 // fetch json with php (werkt niet)
-$json_string = file_get_contents("http://localhost/api/product");
+$json_string = file_get_contents("/api/product");
 $parsed_json = json_decode($json_string, true);
 
 foreach ($parsed_json as $key => $value) {
