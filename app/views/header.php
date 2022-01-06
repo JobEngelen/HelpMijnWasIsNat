@@ -38,7 +38,7 @@
               <div class="row justify-content-center">
                 <div class="card-body align-items-center">
                   <div class="input-group">
-                    <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Zoek wasdrogers...">
+                    <input id="search" class="form-control form-control-lg form-control-borderless" type="search" placeholder="Zoek wasdrogers...">
                     <button type="button" class="btn btn-secondary">
                       <span class="glyphicon glyphicon-search"></span> Zoek
                     </button>
@@ -77,4 +77,4 @@
     </div>
   </nav>
 
-  <div class="container w-100 pull-center">
+  <div class="w-100 pull-center overflow-hidden">
