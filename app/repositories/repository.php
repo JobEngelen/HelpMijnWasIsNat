@@ -3,7 +3,7 @@
 class Repository
 {
 
-    /*protected $connection;
+    protected $connection;
 
     function __construct()
     {
@@ -16,9 +16,9 @@ class Repository
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
         }
-    }*/
+    }
 
-    protected $pdo;
+   /* protected $pdo;
 
 
     function __construct()
@@ -28,7 +28,7 @@ class Repository
             /*$dsn = "pgsql:host=$host;port=$port;dbname=$db;";
             // make a database connection
             $pdo = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-            // set the PDO error mode to exception*/
+            // set the PDO error mode to exception
             $dsn = "pgsql:"
                 . "host=" . $host . ";"
                 . "dbname=" . $dbname . ";"
@@ -45,5 +45,5 @@ class Repository
                 $pdo = null;
             }
         }
-    }
+    }*/
 }
