@@ -46,7 +46,7 @@ $parsed_json = json_decode($json_string, true);
                             ?>
                         </h4>
                         <h4 class="col-md-6">
-                            Prijs: <?php echo $value['price'] ?>
+                            Prijs: €<?php echo $value['price'] ?>
                         </h4>
                         <button type='button' class='btn btn-primary btn-block'>
                             <i class='fas fa-plus'></i> Voeg toe aan winkelwagen
