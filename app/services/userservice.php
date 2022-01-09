@@ -8,4 +8,8 @@ class UserService {
         $repository->register($user); 
     }
 
+    public function login($username, $password) {
+        $repository = new UserRepository();
+        $repository->login($username, $password);
+    }
 }

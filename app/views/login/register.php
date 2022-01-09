@@ -3,7 +3,7 @@ include __DIR__ . '/../header.php';
 ?>
 
 <div class="row">
-    <form class="mx-1 w-25 mt-5 col-md-8 mx-auto" method="post" action="" enctype="multipart/form-data">
+    <form class="mx-1 w-25 mt-5 col-md-8 mx-auto" method="post" action="/register/_register" enctype="multipart/form-data">
 
         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
             <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registreren</p>
@@ -38,24 +38,24 @@ include __DIR__ . '/../header.php';
 
 <?php
 include __DIR__ . '/../footer.php';
-
+/*
 $user = new $user();
 $registerController = new registerController();
 
 if (isset($_POST['register'])) {
-    
-    try{
+
+    try {
         $username = ($_POST['username']);
-    $email = ($_POST['email']);
-    $password = ($_POST['password']);
-    
-    $user->$this->__construct($username, $email, $password);
-    $registerController->$this->register($user);
-    } catch(Exception $e) {
+        $email = ($_POST['email']);
+        $password = ($_POST['password']);
+
+        $user->$this->__construct($username, $email, $password);
+        $registerController->$this->register($user);
+    } catch (Exception $e) {
         echo $e;
         echo "the frick!?";
     }
-}
+}*/
 
 ?>
 

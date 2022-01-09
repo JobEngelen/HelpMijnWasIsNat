@@ -30,6 +30,6 @@ class User {
     }
 
     public function getPassword() {
-        return $this->Password;
+        return $this->password;
     }
 }

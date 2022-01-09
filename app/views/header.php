@@ -1,5 +1,5 @@
 <?php
-$loggedIn = false;
+require __DIR__ . '/../helpers/session_helper.php';
 ?>
 
 <!DOCTYPE html>
@@ -53,11 +53,11 @@ $loggedIn = false;
           </li>
         </ul>
         <?php
-        if ($loggedIn) {
+        if (isset($_SESSION['id'])) {
         ?>
           <ul class="navbar-nav me-auto mb-2 mb-md-0 w-25">
             <li class="nav-item">
-              <p class="navbar-brand m-0 pt-4">Welcome user!</p>
+              <p class="navbar-brand m-0">Welcome <?php echo $_SESSION['username']; ?>!</p>
             </li>
             <li class="nav-item me-5">
               <div class="row justify-content-center">
