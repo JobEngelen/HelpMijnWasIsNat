@@ -17,18 +17,21 @@ class UserRepository extends Repository
 
     public function login($username, $password)
     {
-        $stmt = $this->connection->prepare("SELECT id, username, password FROM users where username = ?");
+        $stmt = $this->connection->prepare("SELECT id, username, password, isAdmin FROM users where username = ?");
         $stmt->execute([$username]);
 
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
         $loggedInUser = $stmt->fetchObject();
 
         if (password_verify($password, $loggedInUser->password)) {
+            //if(isset($_SESSION['id'])) {
+                session_start();
+            //}
             $_SESSION['id'] = $loggedInUser->id;
             $_SESSION['username'] = $loggedInUser->username;
+            $_SESSION['isAdmin'] = $loggedInUser->isAdmin;
 
-            echo '<script>alert("Account ' . $loggedInUser->id . ' en session='.$_SESSION['id'].'")</script>';
-            require __DIR__ . '/../views/home/index.php';
+            echo '<script>alert("Account ' . $loggedInUser->id . ' en session=' . $_SESSION['id'] . '")</script>';
         } else {
 ?>
             <script>

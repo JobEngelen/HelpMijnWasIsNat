@@ -1,6 +1,6 @@
 <?php
-$servername = "sql4.freemysqlhosting.net";
-$username = "sql4463706";
-$password = "WbIb8GflrG";
-$database = "sql4463706";
+$servername = "eu-cdbr-west-02.cleardb.net";
+$username = "bb8cd08cb9675f";
+$password = "1d73a74a";
+$database = "heroku_0e61a150f36dc03";
 ?>

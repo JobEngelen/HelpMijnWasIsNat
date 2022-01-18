@@ -11,7 +11,7 @@ $rowCount = 0;
 $bootstrapColWidth = 12 / $numOfCols;
 
 foreach ($model as $product) {
-    $rating = $product->rating;
+    $rating = $product->getRating();
 
     if ($rowCount % $numOfCols == 0) { ?> <div class="row">
         <?php
@@ -20,13 +20,14 @@ foreach ($model as $product) {
         ?>
         <div class="col-md-<?php echo $bootstrapColWidth; ?> border pt-3 pb-3">
             <div class="thumbnail">
+                <h3 class="pull-left justify-content-center">Product-ID: <?php echo $product->getId(); ?></h3>
                 <button type="button" class="btn btn-danger pull-right">
                     <i class="fas fa-times"></i>
                 </button>
                 <img src='<?php echo $product->image ?>' class="w-100 h-100">
             </div>
-            <input type="text" value="<?php echo $product->title ?>" id="addProductForm" class="form-control" maxlength="255" name="title" required />
-            <textarea id="addProductForm" class="form-control" rows="5" maxlength="2048" name="description" required><?php echo $product->content ?></textarea>
+            <input type="text" value="<?php echo $product->getTitle(); ?>" id="addProductForm" class="form-control" maxlength="255" name="title" required />
+            <textarea id="addProductForm" class="form-control" rows="5" maxlength="2048" name="description" required><?php echo $product->getContent(); ?></textarea>
             <div class="row px-4 mt-2 mb-1 align-items-center">
                 <h4 class="col-md-6 text-warning p-0">
                     <?php
@@ -47,7 +48,7 @@ foreach ($model as $product) {
                 </h4>
                 <div class="d-flex flex-row align-items-center mb-4 col-md-6 mt-3">
                     <label class="form-label me-4 w-25" for="addProductForm">Prijs: </label>
-                    <input type="number" value="<?php echo $product->price ?>" id="addProductForm" class="form-control w-75" min=0 name="price" required />
+                    <input type="number" value="<?php echo $product->getPrice(); ?>" id="addProductForm" class="form-control w-75" min=0 name="price" required />
                 </div>
             </div>
             <div class="row">

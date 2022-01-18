@@ -15,8 +15,20 @@ class Product implements \JsonSerializable {
         return $this->id;
     }
 
+    public function getTitle() {
+        return $this->title;
+    }
+
+    public function getContent() {
+        return $this->content;
+    }
+
     public function getRating() {
         return $this->rating;
+    }
+
+    public function getPrice() {
+        return $this->price;
     }
 
     public function jsonSerialize(): mixed

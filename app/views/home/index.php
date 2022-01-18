@@ -62,28 +62,30 @@ $parsed_json = json_decode($json_string, true);
     <div class="w-25 text-center">
         <p>WINKELMAND</p>
     </div>
-    <?php
+</div>
+<?php
 
-    include __DIR__ . '/../footer.php';
-    ?>
+include __DIR__ . '/../footer.php';
+?>
 
-    <script>
-        const input = document.querySelector("input");
 
-        const filterFunction = () => {
-            const cards = document.querySelectorAll(".card");
-            cards.forEach((item) => {
-                let whatToSearch = item.querySelector("p");
-                if (
-                    whatToSearch.innerHTML.toUpperCase().indexOf(input.value.toUpperCase()) >
-                    -1
-                ) {
-                    item.style.display = "";
-                } else {
-                    item.style.display = "none";
+<script>
+    const input = document.querySelector("input");
 
-                }
-            });
-        };
-        input.addEventListener("keyup", filterFunction);
-    </script>
+    const filterFunction = () => {
+        const cards = document.querySelectorAll(".card");
+        cards.forEach((item) => {
+            let whatToSearch = item.querySelector("p");
+            if (
+                whatToSearch.innerHTML.toUpperCase().indexOf(input.value.toUpperCase()) >
+                -1
+            ) {
+                item.style.display = "";
+            } else {
+                item.style.display = "none";
+
+            }
+        });
+    };
+    input.addEventListener("keyup", filterFunction);
+</script>
