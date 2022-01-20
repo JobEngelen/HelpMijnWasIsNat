@@ -13,18 +13,6 @@ class LoginController
 
     public function index()
     {
-        if (isset($_POST['login'])) {
-            try {
-                $username = ($_POST['username']);
-                $password = ($_POST['password']);
-
-                $this->userService->login($username, $password);
-                require __DIR__ . '/../views/login/login.php';
-            } catch (Exception $e) {
-                echo $e;
-                echo "Er ging iets verkeerd...";
-            }
-        }
         require __DIR__ . '/../views/login/login.php';
     }
 
