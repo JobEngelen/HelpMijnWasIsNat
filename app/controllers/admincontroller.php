@@ -12,8 +12,11 @@ class AdminController
 
     public function index()
     {
-        $model = $this->productService->getAll();
+        require __DIR__ . '/../views/admin/home/vieworders.php';
+    }
 
+    public function editProduct()
+    {
         require __DIR__ . '/../views/admin/home/editproduct.php';
     }
 

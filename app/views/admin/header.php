@@ -36,7 +36,7 @@
     </nav>
     <div class="m-5">a</div>
     <div class="d-flex flex-row mb-4 col-md-6 w-100">
-        <div class="mx-5 pull-left">centerproductscenterproducts</div>  
+        <div class="mx-5 pull-left">centerproductscenterproducts</div>
         <div class="container">
             <div class="row flex-nowrap">
                 <div class="col-auto col-md-2 col-xl-2 px-sm-2 px-0 bg-dark navbar-fixed-top">
@@ -45,6 +45,16 @@
                             <a class="navbar-brand text-light" href="/admin">HelpMijnWasIsNat.nl - Admin panel</a>
                             <li class="nav-item mt-3">
                                 <a href="/admin" class="text-light align-middle px-0">
+                                    <h4>
+                                        <i class="fas fa-pallet px-3 pe-4"></i>
+                                        <span class="ms-1 d-none d-sm-inline">
+                                            Bestellingen
+                                        </span>
+                                    </h4>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/admin/editProduct" class="text-light align-middle px-0">
                                     <h4>
                                         <i class="far fa-edit px-3 pe-4"></i>
                                         <span class="ms-1 d-none d-sm-inline">

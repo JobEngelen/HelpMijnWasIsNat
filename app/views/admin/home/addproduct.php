@@ -4,6 +4,8 @@ include __DIR__ . '/../../../dbconfig.php';
 include __DIR__ . '/../header.php';
 ?>
 
+<h1>Toevoegen product</h1>
+
 <form class="mx-1 mx-md-4 w-50 mt-5" method="post" action="" enctype="multipart/form-data">
 
     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">

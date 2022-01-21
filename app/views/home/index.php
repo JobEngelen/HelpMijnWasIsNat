@@ -7,7 +7,8 @@ $parsed_json = json_decode($json_string, true);
 
 ?>
 
-<script> // Automatically load shoppingcart when loading page
+<script>
+    // Automatically load shoppingcart when loading page
     window.onload = function() {
         cartAction('show', '');
     };
@@ -60,7 +61,7 @@ $parsed_json = json_decode($json_string, true);
                                 <h4 class="product-price col-md-6">
                                     Prijs: €<?php echo $value['price']; ?>
                                 </h4>
-                                <div><input type="text" id="qty_<?php echo $value['id']; ?>" name="quantity" value="1" size="2" />
+                                <div>
                                     <?php
                                     $in_session = "0";
                                     if (!empty($_SESSION["cart_item"])) {
@@ -71,7 +72,6 @@ $parsed_json = json_decode($json_string, true);
                                     }
                                     ?>
                                     <input type="button" id="add_<?php echo $value['id']; ?>" value='Voeg toe aan winkelwagen' class="btnAddAction cart-action btn btn-primary btn-block" onClick="cartAction('add','<?php echo $value['id']; ?>')" <?php if ($in_session != "0") { ?>style="display:none" <?php } ?> />
-                                    <input type="button" id="added_<?php echo $value['id']; ?>" value="In winkelwagen" class="btnAdded btn btn-primary btn-block" <?php if ($in_session != "1") { ?>style="display:none" <?php } ?> />
                                 </div>
                     </form>
             </div>
@@ -146,7 +146,7 @@ include __DIR__ . '/../footer.php';
         if (action != "") {
             switch (action) {
                 case "add":
-                    queryString = 'action=' + action + '&code=' + product_code + '&quantity=' + $("#qty_" + product_code).val();
+                    queryString = 'action=' + action + '&code=' + product_code + '&quantity=1';
                     break;
                 case "remove":
                     queryString = 'action=' + action + '&code=' + product_code;
@@ -154,7 +154,16 @@ include __DIR__ . '/../footer.php';
                 case "empty":
                     queryString = 'action=' + action;
                     break;
+                case "minusQ":
+                    queryString = 'action=' + action + '&code=' + product_code;
+                    break;
+                case "addQ":
+                    queryString = 'action=' + action + '&code=' + product_code;
+                    break;
                 case "show":
+                    queryString = 'action=' + action;
+                    break;
+                case "order":
                     queryString = 'action=' + action;
                     break;
             }
@@ -165,22 +174,6 @@ include __DIR__ . '/../footer.php';
             type: "POST",
             success: function(data) {
                 $("#cart-item").html(data);
-                if (action != "/ajax/shoppingcart") {
-                    switch (action) {
-                        case "add":
-                            $("#add_" + product_code).hide();
-                            $("#added_" + product_code).show();
-                            break;
-                        case "remove":
-                            $("#add_" + product_code).show();
-                            $("#added_" + product_code).hide();
-                            break;
-                        case "empty":
-                            $(".btnAddAction").show();
-                            $(".btnAdded").hide();
-                            break;
-                    }
-                }
             },
             error: function() {}
         });

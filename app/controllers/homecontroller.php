@@ -26,7 +26,7 @@ class HomeController extends Controller
             }
         }
         if ($_SESSION['isAdmin']) {
-            require __DIR__ . '/../views/admin/home/editproduct.php';
+            require __DIR__ . '/../views/admin/home/vieworders.php';
         } else {
             require __DIR__ . '/../views/home/index.php';
         }

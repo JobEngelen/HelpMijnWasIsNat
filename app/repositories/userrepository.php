@@ -30,8 +30,6 @@ class UserRepository extends Repository
             $_SESSION['id'] = $loggedInUser->id;
             $_SESSION['username'] = $loggedInUser->username;
             $_SESSION['isAdmin'] = $loggedInUser->isAdmin;
-
-            echo '<script>alert("Account ' . $loggedInUser->id . ' en session=' . $_SESSION['id'] . '")</script>';
         } else {
 ?>
             <script>
