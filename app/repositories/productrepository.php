@@ -6,7 +6,6 @@ class ProductRepository extends Repository {
 
     function getAll() {
         try {
-            //$stmt = $this->connection->prepare("SELECT * FROM products");
             $stmt = $this->connection->prepare("SELECT * FROM products");
             $stmt->execute();
 

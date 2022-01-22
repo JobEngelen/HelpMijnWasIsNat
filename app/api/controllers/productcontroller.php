@@ -16,7 +16,10 @@ class ProductController {
         // return all products in the database as JSON
         $products = $this->productService->getAll();
         $json = json_encode($products);
-        echo $json;
+        if(isset($_SESSION["id"]) && $_SESSION["isAdmin"] == 1) {
+            echo $json;
+        }
+        
        // return null;       
     }
 }
