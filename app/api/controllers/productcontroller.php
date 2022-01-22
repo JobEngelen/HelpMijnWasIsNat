@@ -1,26 +1,26 @@
 <?php
 require __DIR__ . '/../../services/productservice.php';
 
-class ProductController {
+class ProductController
+{
 
-    private $productService; 
+    private $productService;
 
     // initialize services
-    function __construct() {
+    function __construct()
+    {
         $this->productService = new ProductService();
     }
 
-    public function index() 
+    public function index()
     {
         // your code here
         // return all products in the database as JSON
         $products = $this->productService->getAll();
         $json = json_encode($products);
-        if(isset($_SESSION["id"]) && $_SESSION["isAdmin"] == 1) {
-            echo $json;
-        }
-        
-       // return null;       
+        echo $json;
+
+
+        // return null;       
     }
 }
-?>
