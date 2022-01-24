@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/../header.php';
+include __DIR__ . '/header.php';
 
 // fetch json with php
 $json_string = file_get_contents("https://helpmijnwasisnat.herokuapp.com/api/product");
@@ -15,11 +15,13 @@ $rowCount = 0;
 $bootstrapColWidth = 12 / $numOfCols;
 
 //foreach ($model as $product) {
-    echo "<h1>Wijzig producten</h1>";
+?>
+<h1>Wijzig producten</h1>
+<?php
 if (!empty($parsed_json)) {
     foreach ($parsed_json as $key => $value) {
         $rating = $value["rating"];
-        
+
         if ($rowCount % $numOfCols == 0) { ?> <div class="row">
             <?php
         }

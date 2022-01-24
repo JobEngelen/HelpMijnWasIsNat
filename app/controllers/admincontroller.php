@@ -13,28 +13,24 @@ class AdminController extends Controller
 
     public function index()
     {
-        $orders = $this->adminService->getOrders();      
+        $orders = $this->adminService->getOrders();
         $this->displayView($orders);
-        //require __DIR__ . '/../views/product/index.php';
-        //require __DIR__ . '/../views/admin/home/vieworders.php';
-
-        //$directory = strtolower(substr(get_class($this), 0, -10));
-        //$view = debug_backtrace()[1]['function'];
-        //require __DIR__ . '/../views/admin/home/vieworders.php';
-        //require __DIR__ . "/../views/admin/$directory/$view.php";
     }
 
     public function editProduct()
     {
-        require __DIR__ . '/../views/admin/home/editproduct.php';
+        require __DIR__ . '/../views/admin/editproduct.php';
     }
 
     public function addProduct()
     {
-        require __DIR__ . '/../views/admin/home/addproduct.php';
+        require __DIR__ . '/../views/admin/addproduct.php';
     }
 
-    public function _getOrder()
+    public function editOrder()
     {
+        if (!empty($_POST["id"]) && !empty($_POST["status"])) {
+            $this->adminService->updateOrder($_POST["id"], $_POST["status"]);
+        } 
     }
 }

@@ -23,9 +23,9 @@
                         <div class="row justify-content-center">
                             <div class="card-body row no-gutters align-items-center">
                                 <div class="input-group">
-                                    <button type="button" class="btn btn-light">
+                                    <a class="btn btn-light" href="/login">
                                         <i class="fas fa-sign-in-alt"></i> Log uit
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

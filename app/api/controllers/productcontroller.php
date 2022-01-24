@@ -14,13 +14,10 @@ class ProductController
 
     public function index()
     {
-        // your code here
-        // return all products in the database as JSON
-        $products = $this->productService->getAll();
-        $json = json_encode($products);
-        echo $json;
-
-
-        // return null;       
+        if ($_SERVER["REQUEST_METHOD"] === "GET") {
+            $products = $this->productService->getAll();
+            header('Content-Type: application/json; charset=utf-8');
+            echo json_encode($products);
+        }
     }
 }
