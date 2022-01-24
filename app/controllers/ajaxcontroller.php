@@ -4,7 +4,6 @@ require __DIR__ . '/../services/shoppingcartservice.php';
 
 class AjaxController
 {
-
     private $shoppingCartService;
 
     function __construct()
@@ -22,7 +21,6 @@ class AjaxController
             switch ($_POST["action"]) {
                 case "add":
                     if (!empty($_POST["quantity"])) {
-                        //$productByCode = $db_handle->runQuery("SELECT * FROM tblproduct WHERE code='" . $_POST["code"] . "'");
                         if (!empty($parsed_json)) {
                             foreach ($parsed_json as $key => $value) {
                                 if ($value['id'] == $_POST["code"]) {

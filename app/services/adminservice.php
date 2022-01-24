@@ -6,4 +6,9 @@ class AdminService {
         $repository = new AdminRepository();
         return $repository->getOrders();
     }
+
+    public function updateOrder(int $id, int $status) {
+        $repository = new AdminRepository();
+        return $repository->updateOrder($id, $status);
+    }
 }

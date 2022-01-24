@@ -32,8 +32,7 @@ $parsed_json = json_decode($json_string, true);
                 foreach ($parsed_json as $key => $value) {
                     $rating = $value['rating'];
                 ?>
-                    <form id="frmCart" class="card col-sm-4 w-30">
-                        <div>
+                        <div id="frmCart" class="card col-sm-4 w-30">
                             <p class="hidden"><?php echo $value['title']; ?></p> <!-- search filter -->
                             <div class="p-3">
                                 <div class="product-image thumbnail">
@@ -73,7 +72,7 @@ $parsed_json = json_decode($json_string, true);
                                     ?>
                                     <input type="button" id="add_<?php echo $value['id']; ?>" value='Voeg toe aan winkelwagen' class="btnAddAction cart-action btn btn-primary btn-block" onClick="cartAction('add','<?php echo $value['id']; ?>')" <?php if ($in_session != "0") { ?>style="display:none" <?php } ?> />
                                 </div>
-                    </form>
+                    
             </div>
         </div>
 <?php

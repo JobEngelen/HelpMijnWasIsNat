@@ -1,5 +1,8 @@
 <?php
 require __DIR__ . '/../helpers/session_helper.php';
+if (isset($_SESSION['id'])) { // logout
+  //session_unset();
+}
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +67,7 @@ require __DIR__ . '/../helpers/session_helper.php';
                 <div class="card-body row no-gutters align-items-center">
                   <div class="input-group">
                     <a class="btn btn-light" href="/login">
-                      <i class="fas fa-sign-in-alt"></i> Log out
+                      <i class="fas fa-sign-in-alt"></i> Log uit
                     </a>
                   </div>
                 </div>

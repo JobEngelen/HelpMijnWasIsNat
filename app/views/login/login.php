@@ -1,8 +1,5 @@
 <?php
 include __DIR__ . '/../header.php';
-if (isset($_SESSION['id'])) {
-    session_unset();
-}
 ?>
 <div class="row">
     <form class="mx-1 w-25 mt-5 col-md-8 mx-auto" method="post" action="/home" enctype="multipart/form-data">

@@ -13,6 +13,9 @@ class LoginController
 
     public function index()
     {
+        if (isset($_SESSION['id'])) { // logout
+            session_unset();
+        }
         require __DIR__ . '/../views/login/login.php';
     }
 

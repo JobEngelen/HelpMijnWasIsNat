@@ -1,41 +1,46 @@
-<?php
-class Order {
+<?
+class Order
+{
     private int $id;
     private string $username;
     private float $totalPrice;
-    private DateTime $date;
+    private string $order_date;
     private int $status;
+    private $order_content = null;
 
-    /*public function __construct($_id, $_username, $_totalPrice, $_date, $_status)
+    public function getId(): int
     {
-        $this->id = $_id;
-        $this->username = $_username;
-        $this->totalPrice = $_totalPrice;
-        $this->date = $_date;
-        $this->status = $_status;
-    }
-    public function __construct($_username)
-    {
-        $this->username = $_username;
-    }*/
-
-    public function getId() {
         return $this->id;
     }
 
-    public function getUsername() {
+    public function getUsername(): string
+    {
         return $this->username;
     }
 
-    public function getTotalPrice() {
+    public function getTotalPrice(): float
+    {
         return $this->totalPrice;
     }
 
-    public function getDate() {
-        return $this->date;
+    public function getOrderDate(): string
+    {
+        return $this->order_date;
     }
 
-    public function getStatus() {
+    public function getStatus(): int
+    {
         return $this->status;
+    }
+
+    public function getOrderContent()
+    {
+        return $this->order_content;
+    }
+
+    public function setOrderContent(OrderContent $content)
+    {
+        $this->order_content[] = $content;
+        return $this;
     }
 }
