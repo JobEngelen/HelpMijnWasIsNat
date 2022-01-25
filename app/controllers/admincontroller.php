@@ -8,29 +8,53 @@ class AdminController extends Controller
 
     function __construct()
     {
+        session_start();
         $this->adminService = new AdminService();
     }
 
     public function index()
     {
-        $orders = $this->adminService->getOrders();
-        $this->displayView($orders);
+        if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) {
+            $orders = $this->adminService->getOrders();
+            $this->displayView($orders);
+        } else {
+            $this->noPermission();
+        }
     }
 
     public function editProduct()
     {
-        require __DIR__ . '/../views/admin/editproduct.php';
+        if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) {
+            require __DIR__ . '/../views/admin/editproduct.php';
+        } else {
+            $this->noPermission();
+        }
     }
 
     public function addProduct()
     {
-        require __DIR__ . '/../views/admin/addproduct.php';
+        if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) {
+            require __DIR__ . '/../views/admin/addproduct.php';
+        } else {
+            $this->noPermission();
+        }
     }
 
     public function editOrder()
     {
-        if (!empty($_POST["id"]) && !empty($_POST["status"])) {
-            $this->adminService->updateOrder($_POST["id"], $_POST["status"]);
-        } 
+        if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) {
+            if (!empty($_POST["id"]) && !empty($_POST["status"])) {
+                $this->adminService->updateOrder($_POST["id"], $_POST["status"]);
+            }
+        } else {
+            $this->noPermission();
+        }
+    }
+
+    public function noPermission()
+    {
+        echo "<h1>Geen toegang tot deze pagina.</h1>";
+        echo "<h3>Error code: 403 forbidden</h3>";
+        echo "<a href='/home'>Terug naar homepagina</a>";
     }
 }

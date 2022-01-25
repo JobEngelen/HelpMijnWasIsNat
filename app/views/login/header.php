@@ -1,6 +1,5 @@
 <?php
-require __DIR__ . '/../helpers/session_helper.php';
-
+require __DIR__ . '/../../helpers/session_helper.php';
 ?>
 
 <!DOCTYPE html>
@@ -53,56 +52,31 @@ require __DIR__ . '/../helpers/session_helper.php';
             </span>
           </li>
         </ul>
-        <?php
-        if (isset($_SESSION['id'])) {
-        ?>
-          <ul class="navbar-nav me-auto mb-2 mb-md-0 w-25">
-            <li class="nav-item">
-              <p class="navbar-brand m-0">Welkom <?php echo $_SESSION['username']; ?>!</p>
-            </li>
-            <li class="nav-item me-5">
-              <div class="row justify-content-center">
-                <div class="card-body row no-gutters align-items-center">
-                  <div class="input-group">
-                    <a class="btn btn-light" href="/login">
-                      <i class="fas fa-sign-in-alt"></i> Log uit
-                    </a>
-                  </div>
+        <!-- right side of navbar -->
+        <ul class="navbar-nav me-auto mb-2 mb-md-0 w-25">
+          <li class="nav-item mx-5">
+            <div class="row justify-content-center">
+              <div class="card-body row no-gutters align-items-center">
+                <div class="input-group">
+                  <a class="btn btn-secondary" href="/register">
+                    <i class="fas fa-user-plus"></i> Registreer
+                  </a>
                 </div>
               </div>
-            </li>
-          </ul>
-        <?php
-        } else {
-        ?>
-          <!-- right side of navbar -->
-          <ul class="navbar-nav me-auto mb-2 mb-md-0 w-25">
-            <li class="nav-item mx-5">
-              <div class="row justify-content-center">
-                <div class="card-body row no-gutters align-items-center">
-                  <div class="input-group">
-                    <a class="btn btn-secondary" href="/register">
-                      <i class="fas fa-user-plus"></i> Registreer
-                    </a>
-                  </div>
+            </div>
+          </li>
+          <li class="nav-item me-5">
+            <div class="row justify-content-center">
+              <div class="card-body row no-gutters align-items-center">
+                <div class="input-group">
+                  <a class="btn btn-light" href="/login">
+                    <i class="fas fa-sign-in-alt"></i> Log in
+                  </a>
                 </div>
               </div>
-            </li>
-            <li class="nav-item me-5">
-              <div class="row justify-content-center">
-                <div class="card-body row no-gutters align-items-center">
-                  <div class="input-group">
-                    <a class="btn btn-light" href="/login">
-                      <i class="fas fa-sign-in-alt"></i> Log in
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        <?php
-        }
-        ?>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
