@@ -26,7 +26,6 @@ class HomeController extends Controller
             }
         }
         if ($_SESSION['isAdmin']) {
-            //require __DIR__ . '/../views/admin/home/editproduct.php';
             header("Location: /admin");
         } else {
             require __DIR__ . '/../views/home/index.php';
@@ -36,5 +35,10 @@ class HomeController extends Controller
     public function about()
     {
         require __DIR__ . '/../views/home/about.php';
+    }
+
+    public function contact()
+    {
+        require __DIR__ . '/../views/home/contact.php';
     }
 }

@@ -1,5 +1,8 @@
 <?php
-include __DIR__ . '/../header.php';
+include __DIR__ . '/header.php';
+if (isset($_SESSION['id'])) { // logout
+    session_unset();
+}
 ?>
 <div class="row">
     <form class="mx-1 w-25 mt-5 col-md-8 mx-auto" method="post" action="/home" enctype="multipart/form-data">
@@ -17,7 +20,7 @@ include __DIR__ . '/../header.php';
             <label class="form-label me-4 w-50" for="loginForm">Wachtwoord</label>
             <input type="password" id="loginForm" class="form-control" maxlength="255" name="password" required />
         </div>
-    
+
         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
             <button type="submit" class="btn btn-primary btn-lg" name="login">Log in</button>
         </div>
