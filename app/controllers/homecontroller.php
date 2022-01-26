@@ -4,13 +4,13 @@ require __DIR__ . '/../services/userservice.php';
 
 class HomeController extends Controller
 {
-
     private $userService;
 
     function __construct()
     {
         $this->userService = new UserService();
     }
+
     public function index()
     {
         $_SESSION['isAdmin'] = false;

@@ -90,9 +90,8 @@ class AjaxController
                     break;
             }
         }
-
 ?>
-        <table cellpadding="10" cellspacing="1" class="table w-25">
+        <table align=right cellpadding="10" cellspacing="1" class="table w-25">
             <tbody>
                 <?php
                 if (isset($_SESSION["cart_item"])) {

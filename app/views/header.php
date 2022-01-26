@@ -43,7 +43,7 @@ require __DIR__ . '/../helpers/session_helper.php';
               <div class="row justify-content-center">
                 <div class="card-body align-items-center">
                   <div class="input-group">
-                    <input id="search" class="form-control form-control-lg form-control-borderless" type="search" placeholder="Zoek wasdrogers...">
+                    <input name="searchBar" class="form-control form-control-lg form-control-borderless" type="search" placeholder="Zoek wasdrogers...">
                     <button type="button" class="btn btn-secondary">
                       <span class="glyphicon glyphicon-search"></span> Zoek
                     </button>
