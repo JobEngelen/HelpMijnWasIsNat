@@ -39,14 +39,14 @@ $parsed_json = json_decode($json_string, true);
                 foreach ($parsed_json as $key => $value) {
                     $rating = $value['rating'];
                 ?>
-                    <div id="frmCart" class="card col-sm-4 w-30">
+                    <div id="frmCart" class="card col-sm-4 w-30 px-0">
                         <div class="p-3">
                             <div class="product-image thumbnail">
                                 <img src="<?php echo $value['image']; ?>">
                             </div>
                             <h3 name="title"><?php echo $value['title']; ?></h3>
                             <p><?php echo $value['content']; ?></p>
-                            <h4 name="rating" id="<?php echo $rating ?>" class="col-md-6 text-warning p-0">
+                            <h4 name="rating" id="<?php echo $rating ?>" class="col-md-5 text-warning p-0">
                                 <?php
                                 for ($i = 0; $i < 5; $i++) {
                                     if ($rating >= 1) {
@@ -63,8 +63,8 @@ $parsed_json = json_decode($json_string, true);
                                 }
                                 ?>
                             </h4>
-                            <h4 class="product-price col-md-6">
-                                Prijs: €<i name="price"><?php echo $value['price']; ?></i>
+                            <h4 class="product-price col-md-7" align=right>
+                                Prijs: €<i name="price"><?php echo number_format($value["price"], 2); ?></i>
                             </h4>
                             <div>
                                 <?php

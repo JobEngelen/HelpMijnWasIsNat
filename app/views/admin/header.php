@@ -19,6 +19,9 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <!-- right side of navbar -->
                 <ul class="navbar-nav me-auto mb-2 mb-md-0 navbar-right">
+                    <li class="nav-item">
+                        <p class="navbar-brand m-0">Welkom <?php echo $_SESSION['username']; ?>!</p>
+                    </li>
                     <li class="nav-item me-5">
                         <div class="row justify-content-center">
                             <div class="card-body row no-gutters align-items-center">
@@ -74,7 +77,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="text-light align-middle px-0">
+                                <a href="/admin/register" class="text-light align-middle px-0">
                                     <h4>
                                         <i class="fas fa-user-plus px-3"></i>
                                         <span class="ms-1 d-none d-sm-inline">

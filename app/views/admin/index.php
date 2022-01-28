@@ -43,7 +43,7 @@ foreach ($model as $order) {
                     <h4><?php echo $order->getOrderDate() ?></h4>
                 </th>
                 <th class="col-md-2">
-                    <h4 align=right class="pe-5">€<?php echo $order->getTotalPrice() ?></h4>
+                    <h4 align=right class="pe-5">€<?php echo number_format($order->getTotalPrice(), 2) ?></h4>
                 </th>
                 <th class="col-md-2 container">
                     <div class="row">
@@ -100,7 +100,7 @@ foreach ($model as $order) {
                         <h4 align=center><?php echo $content->getQuantity() ?></h4>
                     </td>
                     <td align=right>
-                        <h4 class="pe-3">€<?php echo $content->getPrice() * $content->getQuantity() ?></h4>
+                        <h4 class="pe-3">€<?php echo number_format($content->getPrice() * $content->getQuantity(), 2) ?></h4>
                     </td>
                     <td></td>
                 </tr>

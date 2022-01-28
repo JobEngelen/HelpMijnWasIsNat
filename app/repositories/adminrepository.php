@@ -57,4 +57,63 @@ class AdminRepository extends Repository
             echo $e;
         }
     }
+
+    function addProduct($product)
+    {
+        try {
+            $stmt = $this->connection->prepare("INSERT INTO products (title, content, rating, price, image) 
+            VALUES(?, ?, ?, ?, ?)");
+            $stmt->execute([$product->getTitle(), $product->getContent(), $product->getRating(), $product->getPrice(), $product->getImage()]);
+            echo "New record created successfully";
+        } catch (PDOException $e) {
+            echo $stmt . "<br>" . $e->getMessage();
+        }
+
+        /*
+    //foto naar mapje sturen
+    $fnm = $_FILES["image"]["name"];
+    $dst = "/home/" . $fnm;
+    //move_uploaded_file($_FILES["image"]["tmp_name"], $dst);
+
+    //foto uit mapje halen en decoden naar base64
+    $imagedata = file_get_contents($dst);
+    // alternatively specify an URL, if PHP settings allow
+    $base64 = base64_encode($imagedata);*/
+
+        //echo $title . " " . $description . " "  . $rating . " " . $price;
+    }
+
+    function updateProduct(int $id, string $title, string $content, $rating, $price)
+    {
+        try {
+            $stmt = $this->connection->prepare("
+            UPDATE products
+            SET title = ?, content = ?, rating = ?, price = ?
+            WHERE id = ?");
+            $stmt->execute(array($title, $content, $rating, $price, $id));
+        } catch (PDOException $e) {
+            echo $e;
+        }
+    }
+
+    function deleteProduct(int $id)
+    {
+        try {
+            $stmt = $this->connection->prepare("DELETE FROM products WHERE id = ?");
+            $stmt->execute(array($id));
+        } catch (PDOException $e) {
+            echo $e;
+        }
+    }
+
+    public function register($user)
+    {
+        try {
+            $stmt = $this->connection->prepare("INSERT into users (username, email, password, isAdmin) VALUES (?,?,?, 1)");
+            $stmt->execute([$user->getUsername(), $user->getEmail(), $user->getPassword()]);
+            echo '<script>alert("Medewerker-account ' . $user->getUsername() . ' is aangemaakt!")</script>';
+        } catch (PDOException $e) {
+            echo $e;
+        }
+    }
 }

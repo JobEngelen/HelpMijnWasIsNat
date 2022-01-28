@@ -6,6 +6,16 @@ class Product implements \JsonSerializable {
     private string $content;
     private float $rating;
     private float $price;
+    private string $image;
+
+    public function __construct($_title, $_content, $_rating, $_price, $_image)
+    {
+        $this->title = $_title;
+        $this->content = $_content;
+        $this->rating = $_rating;
+        $this->price = $_price;
+        $this->image = $_image;
+    }
 
     public function setId(int $id) {
         $this->id = $id;
@@ -29,6 +39,10 @@ class Product implements \JsonSerializable {
 
     public function getPrice() {
         return $this->price;
+    }
+
+    public function getImage() {
+        return $this->image;
     }
 
     public function jsonSerialize(): mixed

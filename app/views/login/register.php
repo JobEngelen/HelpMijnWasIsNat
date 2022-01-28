@@ -38,25 +38,6 @@ include __DIR__ . '/../header.php';
 
 <?php
 include __DIR__ . '/../footer.php';
-/*
-$user = new $user();
-$registerController = new registerController();
-
-if (isset($_POST['register'])) {
-
-    try {
-        $username = ($_POST['username']);
-        $email = ($_POST['email']);
-        $password = ($_POST['password']);
-
-        $user->$this->__construct($username, $email, $password);
-        $registerController->$this->register($user);
-    } catch (Exception $e) {
-        echo $e;
-        echo "the frick!?";
-    }
-}*/
-
 ?>
 
 <!-- Confirm password -->
