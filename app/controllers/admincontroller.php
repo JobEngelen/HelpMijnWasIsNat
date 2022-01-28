@@ -87,7 +87,6 @@ class AdminController extends Controller
             $image = "https://images.ctfassets.net/gtq5kcq8pjem/65pcZKuHDqSlS76Q90Qw2U/973124efa30fd55090c7d2d65355af78/1_2x.jpg?w=450&h=450";
             require __DIR__ . '/../views/admin/addproduct.php';
             $product = new Product($title, $description, $rating, $price, $image);
-            echo "<script>alert('hi guys');</script>";
             $this->adminService->addProduct($product);
         } else {
             $this->noPermission();
