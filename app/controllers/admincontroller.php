@@ -28,7 +28,7 @@ class AdminController extends Controller
     {
         if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) {
             if (!empty($_POST["id"]) && !empty($_POST["status"])) {
-                $this->adminService->updateOrder($_POST["id"], $_POST["status"]);
+                $this->adminService->updateOrder(htmlspecialchars($_POST["id"]), htmlspecialchars($_POST["status"]));
             }
         } else {
             $this->noPermission();
@@ -51,7 +51,7 @@ class AdminController extends Controller
                 switch ($_POST["action"]) {
                     case 'update':
                         if (!empty($_POST["id"]) && !empty($_POST["title"]) && !empty($_POST["content"]) && !empty($_POST["rating"]) && !empty($_POST["price"])) {
-                            $this->adminService->updateProduct($_POST["id"], $_POST["title"], $_POST["content"], $_POST["rating"], $_POST["price"]);
+                            $this->adminService->updateProduct(htmlspecialchars($_POST["id"]), htmlspecialchars($_POST["title"]), htmlspecialchars($_POST["content"]), htmlspecialchars($_POST["rating"]), htmlspecialchars($_POST["price"]));
                         }
                         break;
                     case 'delete':
@@ -75,16 +75,14 @@ class AdminController extends Controller
         }
     }
 
-
-
     public function _addProduct()
     {
         if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) {
-            $title = ($_POST['title']);
-            $description = ($_POST['description']);
-            $rating = ($_POST['rating']);
-            $price = ($_POST['price']);
-            $image = "https://images.ctfassets.net/gtq5kcq8pjem/65pcZKuHDqSlS76Q90Qw2U/973124efa30fd55090c7d2d65355af78/1_2x.jpg?w=450&h=450";
+            $title = htmlspecialchars($_POST['title']);
+            $description = htmlspecialchars($_POST['description']);
+            $rating = htmlspecialchars($_POST['rating']);
+            $price = htmlspecialchars($_POST['price']);
+            $image = htmlspecialchars($_POST['image']);
             require __DIR__ . '/../views/admin/addproduct.php';
             $product = new Product($title, $description, $rating, $price, $image);
             $this->adminService->addProduct($product);
@@ -96,21 +94,7 @@ class AdminController extends Controller
     public function register()
     {
         if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) {
-            require __DIR__ . '/../views/admin/addproduct.php';
-            if (isset($_POST['register'])) {
-                try {
-                    $username = ($_POST['username']);
-                    $email = ($_POST['email']);
-                    $password = ($_POST['password']);
-                    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-                    $user = new User($username, $email, $hashed_password);
-                    require __DIR__ . '/../views/admin/register.php';
-                    $this->adminService->register($user);
-                } catch (Exception $e) {
-                    echo $e;
-                    echo "Er ging iets verkeerd...";
-                }
-            }
+            require __DIR__ . '/../views/admin/register.php';
         } else {
             $this->noPermission();
         }
@@ -121,10 +105,10 @@ class AdminController extends Controller
         if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) {
             if (isset($_POST['register'])) {
                 try {
-                    $username = ($_POST['username']);
-                    $email = ($_POST['email']);
-                    $password = ($_POST['password']);
-                    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+                    $username = htmlspecialchars($_POST['username']);
+                    $email = htmlspecialchars($_POST['email']);
+                    $password = htmlspecialchars($_POST['password']);
+                    $hashed_password = password_hash(htmlspecialchars($password), PASSWORD_DEFAULT);
                     $user = new User($username, $email, $hashed_password);
                     require __DIR__ . '/../views/admin/register.php';
                     $this->adminService->register($user);

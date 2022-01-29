@@ -14,6 +14,7 @@ class HomeController extends Controller
     public function index()
     {
         $_SESSION['isAdmin'] = false;
+        $_SESSION['falseLogin'] = false;
         if (isset($_POST['login'])) {
             try {
                 $username = ($_POST['username']);
@@ -27,6 +28,8 @@ class HomeController extends Controller
         }
         if ($_SESSION['isAdmin']) {
             header("Location: /admin");
+        } else if ($_SESSION['falseLogin']) {
+            header('Location: /login');
         } else {
             require __DIR__ . '/../views/home/index.php';
         }

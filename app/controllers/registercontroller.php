@@ -18,10 +18,10 @@ class RegisterController
     public function _register() {
         if (isset($_POST['register'])) {
             try {
-                $username = ($_POST['username']);
-                $email = ($_POST['email']);
-                $password = ($_POST['password']);
-                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+                $username = htmlspecialchars($_POST['username']);
+                $email = htmlspecialchars($_POST['email']);
+                $password = htmlspecialchars($_POST['password']);
+                $hashed_password = password_hash(htmlspecialchars($password), PASSWORD_DEFAULT);
                 $user = new User($username, $email, $hashed_password);
 
                 $this->userService->register($user);

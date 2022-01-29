@@ -19,16 +19,4 @@ class ProductRepository extends Repository {
             echo $e;
         }
     }
-
-   /* function insert($product) {
-        try {
-            $stmt = $this->connection->prepare("INSERT into article (title, content, author, posted_at) VALUES (?,?,?, NOW())");            
-            
-            $stmt->execute([$article->getTitle(), $article->getContent(), $article->getAuthor()]);
-
-        } catch (PDOException $e) {
-            echo $e;
-        }
-    }*/
-
 }

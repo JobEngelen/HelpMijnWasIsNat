@@ -23,15 +23,18 @@ class UserRepository extends Repository
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
         $loggedInUser = $stmt->fetchObject();
 
-        if (password_verify($password, $loggedInUser->password)) {
-            //if(isset($_SESSION['id'])) {
-                session_start();
-            //}
+        if ($loggedInUser == null) {
+            session_start();
+            $_SESSION['falseLogin'] = true;
+            $_SESSION['isAdmin'] = false;
+        } else if (password_verify($password, $loggedInUser->password)) {
+            session_start();
             $_SESSION['id'] = $loggedInUser->id;
             $_SESSION['username'] = $loggedInUser->username;
             $_SESSION['isAdmin'] = $loggedInUser->isAdmin;
+            $_SESSION['falseLogin'] = false;
         } else {
-?>
+        ?>
             <script>
                 var password = document.getElementById("password");
                 password.setCustomValidity("Wachtwoord en gebruikersnaam komen niet met elkaar overeen.");

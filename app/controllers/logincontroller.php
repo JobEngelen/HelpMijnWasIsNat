@@ -18,20 +18,4 @@ class LoginController
         }
         require __DIR__ . '/../views/login/login.php';
     }
-
-    public function _login()
-    {
-        if (isset($_POST['login'])) {
-            try {
-                $username = ($_POST['username']);
-                $password = ($_POST['password']);
-
-                $this->userService->login($username, $password);
-                require __DIR__ . '/../views/login/login.php';
-            } catch (Exception $e) {
-                echo $e;
-                echo "Er ging iets verkeerd...";
-            }
-        }
-    }
 }
