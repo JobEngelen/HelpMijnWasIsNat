@@ -32,11 +32,11 @@ if (!empty($parsed_json)) {
                     <button type="button" onclick='deleteProduct<?php echo $value["id"]; ?>()' class="btn btn-danger pull-right">
                         <i class="fas fa-times"></i>
                     </button>
-                    <p class="text-danger" id="unsavedMsg<?php echo $value["id"]; ?>"></p>
-                    <img src='<?php echo $value["image"] ?>' class="w-100 h-100">
+                    <p class="text-danger" id="unsavedMsg<?php echo $value["id"]; ?>">&nbsp;</p>
+                    <img src='<?php echo $value["image"] ?>' class="productimage">
                 </div>
                 <input type="text" name="title<?php echo $value["id"]; ?>" value="<?php echo $value["title"]; ?>" class="form-control" maxlength="255" name="title" required />
-                <textarea name="desc<?php echo $value["id"]; ?>" class="form-control" rows="5" maxlength="2048" required><?php echo $value["content"]; ?></textarea>
+                <textarea name="desc<?php echo $value["id"]; ?>" class="form-control" rows="5" maxlength="148" required><?php echo $value["content"]; ?></textarea>
                 <div class="row px-4 mt-2 mb-1 align-items-center">
                     <div class="d-flex flex-row align-items-center mb-4 col-md-6 mt-3">
                         <label class="form-label w-100" for="addProductForm">Rating (1-5): </label>
@@ -112,7 +112,7 @@ if (!empty($parsed_json)) {
 
                     btnRevert<?php echo $value["id"]; ?>.disabled = true;
                     btnSave<?php echo $value["id"]; ?>.disabled = true;
-                    unsavedMsg<?php echo $value["id"]; ?>.innerHTML = "";
+                    unsavedMsg<?php echo $value["id"]; ?>.innerHTML = "&nbsp;";
                 }
 
                 // alert/revert changes
@@ -127,7 +127,7 @@ if (!empty($parsed_json)) {
                     } else {
                         btnRevert<?php echo $value["id"]; ?>.disabled = true;
                         btnSave<?php echo $value["id"]; ?>.disabled = true;
-                        unsavedMsg<?php echo $value["id"]; ?>.innerHTML = "";
+                        unsavedMsg<?php echo $value["id"]; ?>.innerHTML = "&nbsp;";
                     }
                 }
 
@@ -139,7 +139,7 @@ if (!empty($parsed_json)) {
 
                     btnRevert<?php echo $value["id"]; ?>.disabled = true;
                     btnSave<?php echo $value["id"]; ?>.disabled = true;
-                    unsavedMsg<?php echo $value["id"]; ?>.innerHTML = "";
+                    unsavedMsg<?php echo $value["id"]; ?>.innerHTML = "&nbsp;";
                 }
             </script>
             <?php

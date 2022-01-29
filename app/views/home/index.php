@@ -42,10 +42,10 @@ $parsed_json = json_decode($json_string, true);
                     <div id="frmCart" class="card col-sm-4 w-30 px-0">
                         <div class="p-3">
                             <div class="product-image thumbnail">
-                                <img src="<?php echo $value['image']; ?>">
+                                <img src="<?php echo $value['image']; ?>" class="w-100 productimage">
                             </div>
                             <h3 name="title"><?php echo $value['title']; ?></h3>
-                            <p><?php echo $value['content']; ?></p>
+                            <p class="productcontent"><?php echo $value['content']; ?></p>
                             <h4 name="rating" id="<?php echo $rating ?>" class="col-md-5 text-warning p-0">
                                 <?php
                                 for ($i = 0; $i < 5; $i++) {

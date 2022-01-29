@@ -82,7 +82,25 @@ class AdminController extends Controller
             $description = htmlspecialchars($_POST['description']);
             $rating = htmlspecialchars($_POST['rating']);
             $price = htmlspecialchars($_POST['price']);
-            $image = htmlspecialchars($_POST['image']);
+
+            // Upload image
+            define('SITE_ROOT', realpath(dirname(__FILE__)));
+            $output_dir = SITE_ROOT . "/../public/img"; //Path for file upload
+            $fileCount = count($_FILES["image"]['name']);
+            $RandomNum = time();
+            $ImageName = str_replace(' ', '-', strtolower($_FILES['image']['name'][0]));
+            $ImageType = $_FILES['image']['type'][0]; //"image/png", image/jpeg etc.
+            $ImageExt = substr($ImageName, strrpos($ImageName, '.'));
+            $ImageExt = str_replace('.', '', $ImageExt);
+            $ImageName = preg_replace("/\.[^.\s]{3,4}$/", "", $ImageName);
+            $NewImageName = $ImageName . '-' . $RandomNum . '.' . $ImageExt;
+            $ret[$NewImageName] = $output_dir . $NewImageName;
+            move_uploaded_file($_FILES["image"]["tmp_name"][0], $output_dir . "/" . $NewImageName);
+            $data = array(
+                'image' => $NewImageName
+            );
+            $image = "/img/" . $NewImageName;
+
             require __DIR__ . '/../views/admin/addproduct.php';
             $product = new Product($title, $description, $rating, $price, $image);
             $this->adminService->addProduct($product);

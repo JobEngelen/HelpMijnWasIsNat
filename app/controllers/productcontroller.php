@@ -10,13 +10,4 @@ class ProductController extends Controller
     {
         $this->productService = new ProductService();
     }
-
-    //insert
-
-    /*public function single()
-    {
-        $model = $this->productService->getAll();
-
-        require __DIR__ . '/../views/product/single.php';
-    }*/
 }

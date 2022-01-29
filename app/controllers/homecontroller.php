@@ -17,8 +17,8 @@ class HomeController extends Controller
         $_SESSION['falseLogin'] = false;
         if (isset($_POST['login'])) {
             try {
-                $username = ($_POST['username']);
-                $password = ($_POST['password']);
+                $username = htmlspecialchars($_POST['username']);
+                $password = htmlspecialchars($_POST['password']);
 
                 $this->userService->login($username, $password);
             } catch (Exception $e) {

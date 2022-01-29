@@ -60,6 +60,22 @@ class AdminRepository extends Repository
 
     function addProduct($product)
     {
+        $output_dir = SITE_ROOT . "/../public/img"; //Path for file upload
+        $fileCount = count($_FILES["image"]['name']);
+        $RandomNum = time();
+        $ImageName = str_replace(' ', '-', strtolower($_FILES['image']['name'][0]));
+        $ImageType = $_FILES['image']['type'][0]; //"image/png", image/jpeg etc.
+        $ImageExt = substr($ImageName, strrpos($ImageName, '.'));
+        $ImageExt = str_replace('.', '', $ImageExt);
+        $ImageName = preg_replace("/\.[^.\s]{3,4}$/", "", $ImageName);
+        $NewImageName = $ImageName . '-' . $RandomNum . '.' . $ImageExt;
+        $ret[$NewImageName] = $output_dir . $NewImageName;
+        move_uploaded_file($_FILES["image"]["tmp_name"][0], $output_dir . "/" . $NewImageName);
+        $data = array(
+            'image' => $NewImageName
+        );
+        $this->model->file_details($data);
+
         try {
             $stmt = $this->connection->prepare("INSERT INTO products (title, content, rating, price, image) 
             VALUES(?, ?, ?, ?, ?)");

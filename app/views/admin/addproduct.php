@@ -7,7 +7,7 @@ include __DIR__ . '/header.php';
 <form class="mx-1 mx-md-4 w-50 mt-5" method="post" action="/admin/_addProduct" enctype="multipart/form-data">
     <div class="d-flex flex-row align-items-center mb-4">
         <label class="form-label me-4 w-25" for="addProductForm">Afbeelding</label>
-        <input type="file" accept="image/*" id="addProductForm" class="form-control" name="image" required />
+        <input type="file" accept="image/*" id="addProductForm" class="form-control" name="image[]" required />
     </div>
 
     <div class="d-flex flex-row align-items-center mb-4">

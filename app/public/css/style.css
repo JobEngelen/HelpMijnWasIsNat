@@ -1,3 +1,20 @@
-html, body {
-    background-color: red;
+.productimage {
+    min-height: 220px;
+    max-height: 220px;
+}
+
+.productcontent {
+    min-height: 75px;
+    max-height: 75px;
+}
+
+.adminnav li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+.adminnav li:hover {
+    width: 80%;
+    background-color: #3D454C;
 }

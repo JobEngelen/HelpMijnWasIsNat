@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help! Mijn was is nat!</title>
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Bootstrap Font Icon CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -44,7 +45,7 @@
             <div class="row flex-nowrap">
                 <div class="col-auto col-md-2 col-xl-2 px-sm-2 px-0 bg-dark navbar-fixed-top">
                     <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                        <ul class="navbar-nav nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <ul class="navbar-nav adminnav mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                             <a class="navbar-brand text-light" href="/admin">HelpMijnWasIsNat.nl - Admin panel</a>
                             <li class="nav-item mt-3">
                                 <a href="/admin" class="text-light align-middle px-0">

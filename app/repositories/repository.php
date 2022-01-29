@@ -17,33 +17,4 @@ class Repository
             echo "Connection failed: " . $e->getMessage();
         }
     }
-
-   /* protected $pdo;
-
-
-    function __construct()
-    {
-        require __DIR__ . '/../dbconfig.php';
-        try {
-            /*$dsn = "pgsql:host=$host;port=$port;dbname=$db;";
-            // make a database connection
-            $pdo = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-            // set the PDO error mode to exception
-            $dsn = "pgsql:"
-                . "host=" . $host . ";"
-                . "dbname=" . $dbname . ";"
-                . "user=" . $user . ";"
-                . "port=" . $port . ";"
-                . "sslmode=require;"
-                . "password=" . $password;
-            $pdo = new PDO($dsn);
-            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            die($e->getMessage());
-        } finally {
-            if ($pdo) {
-                $pdo = null;
-            }
-        }
-    }*/
 }
