@@ -1,11 +1,14 @@
-# Docker template for PHP projects
-This repository provides a starting template for PHP application development.
+# Web Development 1 eindopdracht Job Engelen INF2B 669915
+Dit project is een webshop dat wasdrogers verkoopt.
 
-It contains:
-* NGINX webserver
-* PHP FastCGI Process Manager with PDO MySQL support
-* MariaDB (GPL MySQL fork)
-* PHPMyAdmin
+Login gegevens:
+* User:
+Username: user
+Password: user
+
+*Admin:
+Username: admin
+Password: admin
 
 ## Installation
 

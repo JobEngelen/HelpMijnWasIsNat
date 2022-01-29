@@ -19,7 +19,7 @@ $parsed_json = json_decode($json_string, true);
     <div class="col-md-12 text-center pb-5">
         <h1>HelpMijnWasIsNat.nl</h1>
     </div>
-    <div class="col-md-4 w-25">
+    <div class="col-md-4 w-25 filter">
         <h3><i class="fas fa-sliders-h pb-5 px-5"></i> Filters</h3>
         <div class="slidecontainer px-5">
             <h4>Minimum prijs: €<i id="minPrice"></i></h4>
@@ -32,7 +32,7 @@ $parsed_json = json_decode($json_string, true);
 
     if (!empty($parsed_json)) {
     ?>
-        <div class="container content col-md-6">
+        <div class="container content col-md-6 productlist">
             <div class="product-item row">
                 <div id="noProductMessage"></div>
                 <?php

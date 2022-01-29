@@ -1,1 +1,5 @@
-{}
+{
+    "scripts": { 
+        "post-install-cmd": [ "ln -sr /app/public public/img" ]
+    }
+}

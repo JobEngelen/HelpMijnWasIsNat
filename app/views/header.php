@@ -27,7 +27,7 @@ require __DIR__ . '/../helpers/session_helper.php';
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0 w-25">
-          <li class="nav-item">
+          <li class="nav-item adminsidenav">
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
