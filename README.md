@@ -9,3 +9,9 @@ Login gegevens:
 - Admin:
 * Username: admin
 * Password: admin
+
+Host:
+https://helpmijnwasisnat.herokuapp.com/
+
+Github:
+https://github.com/JobEngelen/HelpMijnWasIsNat
