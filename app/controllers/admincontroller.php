@@ -83,7 +83,8 @@ class AdminController extends Controller
             $rating = htmlspecialchars($_POST['rating']);
             $price = htmlspecialchars($_POST['price']);
 
-            // Upload image
+            //(Uploading images works on localhost, not on Heroku) Uncomment this to upload images on localhost
+            /* Upload image 
             define('SITE_ROOT', realpath(dirname(__FILE__)));
             $output_dir = SITE_ROOT . "/../public/img"; //Path for file upload
             $fileCount = count($_FILES["image"]['name']);
@@ -99,7 +100,10 @@ class AdminController extends Controller
             $data = array(
                 'image' => $NewImageName
             );
-            $image = "/img/" . $NewImageName;
+            $image = "/img/" . $NewImageName;*/
+
+            //comment this line to upload images on localhost
+            $image = "https://images.ctfassets.net/gtq5kcq8pjem/65pcZKuHDqSlS76Q90Qw2U/973124efa30fd55090c7d2d65355af78/1_2x.jpg?w=450&h=450";
 
             require __DIR__ . '/../views/admin/addproduct.php';
             $product = new Product($title, $description, $rating, $price, $image);

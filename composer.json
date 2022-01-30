@@ -1,5 +1,5 @@
 {
     "scripts": { 
-        "post-install-cmd": [ "ln -sr /app/public public/img" ]
+        "post-install-cmd": [ "ln -sr helpmijnwasisnat/app/public public/img" ]
     }
 }
