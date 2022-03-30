@@ -45,7 +45,7 @@ class AjaxController
                                 }
                             }
                         }
-                    }
+                    } 
                     break;
                 case "remove":
                     if (!empty($_SESSION["cart_item"])) {
